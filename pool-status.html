@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Status - P2P Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pool-status.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pool-status-container">
+            <div class="status-header">
+                <h2>Pool Created Successfully!</h2>
+                <p class="success-message">Your pool is now live and ready for seeders</p>
+            </div>
+
+            <div class="pool-details">
+                <h3 id="poolTitle">Project Title</h3>
+                <div class="meta-info">
+                    <span class="budget">Budget: $<span id="poolBudget">0</span></span>
+                    <span class="location" id="poolLocation">Location</span>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <div class="status-card">
+                    <div class="status-numbers">
+                        <div class="status-item">
+                            <span class="label">Seeders Needed</span>
+                            <span class="value" id="seedersNeeded">0</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">Currently Joined</span>
+                            <span class="value" id="seedersJoined">0</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" id="joinProgress"></div>
+                        </div>
+                        <span class="progress-text">0% Complete</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="primary-button" onclick="window.location.href='share-pool.html'">Share Pool</button>
+                <button class="secondary-button" onclick="window.location.href='dashboard.html'">Go to Dashboard</button>
+            </div>
+        </div>
+    </div>
+    <script src="pool-status.js"></script>
+</body>
+</html> 

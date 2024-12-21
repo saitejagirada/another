@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - P2P Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h2>Welcome, <span id="userName">User</span>!</h2>
+                <button id="logoutBtn" class="secondary-button">Logout</button>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="options-container">
+                    <div class="option-card" onclick="window.location.href='create-pool.html'">
+                        <div class="option-icon">➕</div>
+                        <h3>Create a Pool</h3>
+                        <p>Start a new pool and let others help you</p>
+                    </div>
+                    <div class="option-card" onclick="window.location.href='catch-pools.html'">
+                        <div class="option-icon">🎯</div>
+                        <h3>Catch a Pool</h3>
+                        <p>Browse and join existing and earn some money</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html> 

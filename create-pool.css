@@ -1,0 +1,201 @@
+.pools-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.pools-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.pools-header h2 {
+    margin: 0;
+    color: #2d3748;
+}
+
+.pools-list {
+    margin-bottom: 2rem;
+}
+
+.pool-card {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pool-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pool-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.pool-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.pool-card-type {
+    font-size: 0.9rem;
+    color: #718096;
+    padding: 0.25rem 0.75rem;
+    background: #edf2f7;
+    border-radius: 999px;
+}
+
+.pool-card-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pool-card-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.pool-card-detail-label {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.25rem;
+}
+
+.pool-card-detail-value {
+    font-size: 1rem;
+    color: #2d3748;
+}
+
+.pool-card-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.no-pools-message {
+    text-align: center;
+    padding: 3rem;
+    color: #718096;
+    background: #f7fafc;
+    border-radius: 12px;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.pool-form {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.location-group {
+    margin-bottom: 1.5rem;
+}
+
+.location-group h4 {
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.urgency-section {
+    margin-top: 1.5rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-button {
+    background-color: #ff8c00;
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #ff7300;
+}
+
+.secondary-button {
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+.secondary-button:hover {
+    background-color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+    .pools-container {
+        padding: 1rem;
+    }
+
+    .pool-card-details {
+        grid-template-columns: 1fr;
+    }
+
+    .pool-card-actions {
+        flex-direction: column;
+    }
+
+    .pool-card-actions button {
+        width: 100%;
+    }
+} 

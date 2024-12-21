@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Details - P2P Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="view-pool.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="pool-details">
+            <div class="pool-header">
+                <h2 id="projectTitle">Project Title</h2>
+                <div class="pool-meta">
+                    <span class="pool-type" id="poolType">Pool Type</span>
+                    <span class="budget">Budget: $<span id="projectBudget">1000</span></span>
+                </div>
+            </div>
+
+            <!-- Route information for ride sharing and delivery -->
+            <div id="routeSection" class="route-section" style="display: none;">
+                <div class="route-details">
+                    <div class="location-point">
+                        <h4>Pickup Location</h4>
+                        <p id="pickupLocation">Loading...</p>
+                    </div>
+                    <div class="location-point">
+                        <h4>Drop Location</h4>
+                        <p id="dropLocation">Loading...</p>
+                    </div>
+                </div>
+                <div id="routeMap" class="map-container">
+                    <div class="map-loading">Loading map...</div>
+                </div>
+            </div>
+
+            <!-- Single location for other pool types -->
+            <div id="locationSection" class="location-section">
+                <h3>Location</h3>
+                <p id="projectLocation">Location will appear here...</p>
+                <div id="map" class="map-container">
+                    <div class="map-loading">Loading map...</div>
+                </div>
+            </div>
+
+            <div class="pool-description">
+                <h3>Description</h3>
+                <p id="projectDescription">Project description will appear here...</p>
+            </div>
+
+            <!-- Pending Requests Section (Only visible to pool creator) -->
+            <div id="pendingRequestsSection" class="pending-requests" style="display: none;">
+                <h3>Pending Requests</h3>
+                <div id="pendingRequestsList" class="requests-list">
+                    <!-- Pending requests will be listed here -->
+                    <div class="no-requests-message">No pending requests at the moment.</div>
+                </div>
+            </div>
+
+            <div class="pool-status">
+                <h3>Pool Status</h3>
+                <div class="status-info">
+                    <div class="status-item">
+                        <span>Seeders Needed:</span>
+                        <span class="seeder-count">0</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Accepted:</span>
+                        <span class="accepted-count">0</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="seeders-section">
+                <h3>Accepted Seeders</h3>
+                <div id="acceptedSeeders" class="accepted-seeders">
+                    <!-- Accepted seeders will be listed here -->
+                    <div class="no-seeders-message">No seeders have joined yet.</div>
+                </div>
+            </div>
+
+            <div class="pool-actions">
+                <button id="joinPool" class="primary-button">Join Pool</button>
+                <button id="sharePool" class="secondary-button">Share Pool</button>
+            </div>
+        </div>
+    </div>
+    <script src="view-pool.js"></script>
+</body>
+</html> 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Pool - P2P Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="create-pool.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="pools-container">
+            <div class="pools-header">
+                <h2>Your Pools</h2>
+                <button id="newPoolBtn" class="primary-button">Create New Pool</button>
+            </div>
+
+            <div class="pools-list" id="poolsList">
+                <!-- Existing pools will be listed here -->
+                <div class="no-pools-message" id="noPoolsMessage" style="display: none;">
+                    <p>You haven't created any pools yet.</p>
+                </div>
+            </div>
+
+            <div class="pool-form" id="poolForm" style="display: none;">
+                <div class="form-header">
+                    <h2>Create a New Pool</h2>
+                    <button id="closeFormBtn" class="secondary-button">Cancel</button>
+                </div>
+
+                <form id="createPoolForm">
+                    <div class="form-group">
+                        <h3>Pool Type</h3>
+                        <select id="poolType" required>
+                            <option value="">Select Pool Type</option>
+                            <option value="ride">Ride Sharing</option>
+                            <option value="delivery">Package Delivery</option>
+                            <option value="homework">Homework/Assignment Help</option>
+                            <option value="guide">Local Guide/Tour</option>
+                            <option value="tutor">Tutoring</option>
+                            <option value="handyman">Handyman Services</option>
+                            <option value="cleaning">Cleaning Services</option>
+                            <option value="moving">Moving Help</option>
+                            <option value="tech">Tech Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Handyman specific options -->
+                    <div id="handymanOptions" class="form-group" style="display: none;">
+                        <h3>Service Details</h3>
+                        <select id="handymanServiceType" required>
+                            <option value="">Select Service Type</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="electrical">Electrical</option>
+                            <option value="carpentry">Carpentry</option>
+                            <option value="painting">Painting</option>
+                            <option value="flooring">Flooring</option>
+                            <option value="appliance">Appliance Repair</option>
+                            <option value="hvac">HVAC</option>
+                            <option value="roofing">Roofing</option>
+                            <option value="landscaping">Landscaping</option>
+                            <option value="general">General Repairs</option>
+                        </select>
+
+                        <div class="urgency-section">
+                            <h4>Urgency Level</h4>
+                            <select id="urgencyLevel" required>
+                                <option value="low">Low - Within a week</option>
+                                <option value="medium">Medium - Within 2-3 days</option>
+                                <option value="high">High - Within 24 hours</option>
+                                <option value="emergency">Emergency - ASAP</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>Project Details</h3>
+                        <input type="text" id="projectTitle" placeholder="Project Title" required>
+                        <textarea id="projectDescription" placeholder="Project Description" required></textarea>
+                        <input type="number" id="projectBudget" placeholder="Budget" required>
+                    </div>
+
+                    <!-- Location section for ride sharing and delivery -->
+                    <div id="routeLocationSection" class="form-group" style="display: none;">
+                        <h3>Route Details</h3>
+                        <div class="location-group">
+                            <h4>Pickup Location</h4>
+                            <input 
+                                type="text" 
+                                id="pickupLocationSearch" 
+                                placeholder="Search for pickup location" 
+                                class="location-input"
+                            >
+                            <input 
+                                type="text" 
+                                id="selectedPickupLocation" 
+                                placeholder="Selected Pickup Location" 
+                                readonly
+                            >
+                            <input type="hidden" id="pickupLatitude" name="pickupLatitude">
+                            <input type="hidden" id="pickupLongitude" name="pickupLongitude">
+                        </div>
+                        
+                        <div class="location-group">
+                            <h4>Drop Location</h4>
+                            <input 
+                                type="text" 
+                                id="dropLocationSearch" 
+                                placeholder="Search for drop location" 
+                                class="location-input"
+                            >
+                            <input 
+                                type="text" 
+                                id="selectedDropLocation" 
+                                placeholder="Selected Drop Location" 
+                                readonly
+                            >
+                            <input type="hidden" id="dropLatitude" name="dropLatitude">
+                            <input type="hidden" id="dropLongitude" name="dropLongitude">
+                        </div>
+                        <div id="routeMap" class="map-container"></div>
+                    </div>
+
+                    <!-- Location section for other services -->
+                    <div id="singleLocationSection" class="form-group">
+                        <h3>Location</h3>
+                        <input 
+                            type="text" 
+                            id="locationSearch" 
+                            placeholder="Search for a location" 
+                            required
+                        >
+                        <div id="map"></div>
+                        <input 
+                            type="text" 
+                            id="selectedLocation" 
+                            placeholder="Selected Location" 
+                            readonly 
+                            required
+                        >
+                        <input type="hidden" id="latitude" name="latitude">
+                        <input type="hidden" id="longitude" name="longitude">
+                    </div>
+
+                    <button type="submit" class="primary-button">Create Pool</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="create-pool.js"></script>
+</body>
+</html> 

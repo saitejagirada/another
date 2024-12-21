@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Pools - P2P Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catch-pools.css">
+</head>
+<body>
+    <div class="container">
+        <div class="catch-pools-container">
+            <div class="header">
+                <h2>Available Pools</h2>
+                <div class="search-filters">
+                    <input 
+                        type="text" 
+                        id="searchPools" 
+                        placeholder="Search pools..."
+                    >
+                    <select id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="ride">Ride Sharing</option>
+                        <option value="delivery">Package Delivery</option>
+                        <option value="homework">Homework/Assignment Help</option>
+                        <option value="guide">Local Guide/Tour</option>
+                        <option value="tutor">Tutoring</option>
+                        <option value="handyman">Handyman Services</option>
+                        <option value="cleaning">Cleaning Services</option>
+                        <option value="moving">Moving Help</option>
+                        <option value="tech">Tech Support</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select id="locationFilter">
+                        <option value="">All Locations</option>
+                    </select>
+                    <select id="budgetFilter">
+                        <option value="">All Budgets</option>
+                        <option value="0-1000">Under $1,000</option>
+                        <option value="1000-5000">$1,000 - $5,000</option>
+                        <option value="5000+">Over $5,000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="pools-grid" id="poolsContainer">
+                <!-- Pools will be dynamically added here -->
+            </div>
+
+            <template id="poolCardTemplate">
+                <div class="pool-card">
+                    <div class="pool-header">
+                        <h3 class="pool-title"></h3>
+                        <span class="pool-budget"></span>
+                    </div>
+                    <div class="pool-type"></div>
+                    <p class="pool-description"></p>
+                    
+                    <!-- Route locations for ride sharing and delivery -->
+                    <div class="route-locations">
+                        <div class="location-point">
+                            <span class="location-label">From:</span>
+                            <span class="pickup-location"></span>
+                        </div>
+                        <div class="location-divider">
+                            <span class="arrow">→</span>
+                        </div>
+                        <div class="location-point">
+                            <span class="location-label">To:</span>
+                            <span class="drop-location"></span>
+                        </div>
+                    </div>
+
+                    <!-- Single location for other pool types -->
+                    <div class="single-location">
+                        <span class="location"></span>
+                    </div>
+
+                    <div class="pool-meta">
+                        <span class="seeders-needed"></span>
+                    </div>
+                    <div class="pool-footer">
+                        <button class="view-details-btn">View Details</button>
+                        <button class="catch-pool-btn">Catch Pool</button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <script src="catch-pools.js"></script>
+</body>
+</html> 
